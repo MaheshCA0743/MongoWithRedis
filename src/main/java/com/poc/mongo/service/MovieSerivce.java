@@ -13,16 +13,9 @@ public class MovieSerivce {
     @Autowired
     MovieRepository movieRepository;
 
-    @Autowired
-    private SampleService sampleService;
-
-
-    //@Cacheable(value = "Movie")
+    @Cacheable(value = "Movie")
     public Optional<Movie> getMovieByName(String name){
         System.out.println("Entered MovieService");
-       // return movieRepository.findByName(name);
-
-
-        return sampleService.getMovieByName(name);
+       return movieRepository.findByName(name);
     }
 }
